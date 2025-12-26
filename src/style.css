@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); 
+
+@theme {
+    --color-background: #F0F1F2;
+    --color-Foreground: #34393D;
+    --color-destructive: #C9555A;
+    --color-destructiveForeground: #F0F1F2;
+
+    --color-bgPrimary: #f7f9fa;
+
+
+    --color-bgMesprojet: #e8eaeb;
+    --color-bdApropos: #F1F2F3;
+
+
+    --color-primary: #41494F;
+    --color-primaryForeground: #F0F1F2;
+    --color-secondary: #D5D8DB;
+    --color-secondaryForeground: #34393D;
+    --color-accent: #4D9FA3;
+    --color-accentForeground: #F0F1F2;
+    --color-muted: #DADDE0;
+    --color-mutedForeground: #6D7378;
+
+    --color-card: #F7F9FA;
+    --color-cardForeground: #34393D;
+    --color-popover: #edeeef;
+    --color-popoverForeground: #34393D;
+
+    --color-border: #D5D8DB;
+    --color-input: #D5D8DB;
+    --color-ring: #4D9FA3;
+}
+
+@theme{
+    --font-sans: "Geist", sans-serif;
+}
+
+@layer components{
+    body{
+        @apply bg-popover font-sans
+    }
+
+    .nav-bar{
+        @apply flex justify-between p-4 bg-popover/95 text-primary font-medium left-0 w-full shadow
+    }
+    .header-profil{
+        @apply w-60 h-60 rounded-full object-cover
+    }
+    .primary-center{
+        @apply grid place-content-center 
+    }
+    .btn-primary{
+        @apply p-3 pr-6 pl-6 text-lg rounded-xl border-1
+    }
+}
