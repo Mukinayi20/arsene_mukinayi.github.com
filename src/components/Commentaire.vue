@@ -1,18 +1,15 @@
 <template>
     <div class="pb-15 flex flex-col justify-center">
         <div class="pt-20">
-            <TitleCard src="icone/chat-bubble.png" className="flex items-center flex-col gap-5 pb-10">
+            <TitleCard className="flex items-center flex-col gap-5 pb-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#4D9FA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-more-icon lucide-message-square-more"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 11h.01"/></svg>
                 Commentaire
             </TitleCard>
         </div>
-        <div class="flex justify-center">
-            <Button src="icone/plus.png" extra-class="flex items-center gap-3 bg-Foreground/10 border-none hover:bg-[#00d3f2]/15 w-max">
-                <template #btn-primary >Ajouter un commentaire</template>
-            </Button>
-        </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center items-center gap-2 pl-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#4D9FA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-album-icon lucide-album desktop:w-7"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><polyline points="11 3 11 11 14 8 17 11 17 3"/></svg>
             <div class="w-210">
-                <h3 class="tablette:pl-25 tablette:text-2xl pb-5 text-xl p-8 text-Foreground"><strong>*</strong> Tous les commentaires</h3>
+                <h3 class="tablette:text-2xl text-xl desktop:p-none text-Foreground">Tous les commentaires</h3>
             </div>
         </div>
         <div v-if="commentaires.length > 0" class="flex flex-col items-center">
@@ -24,9 +21,16 @@
                     <p class="pt-5 text-primary">"{{ commentaire.commentaire }}"</p>
                 </Layoutprimary>
             </div>
-            <div v-if="commentaires.length > 3" class="flex justify-center">
-                <Button @click="showAll = !showAll" src="icone/down-arrow.png" extra-class="flex items-center gap-3 bg-background border-secondary hover:border-[#00d3f2]/40 w-max">
-                    <template #btn-primary>Voir plus</template>
+            <div class="flex justify-center gap-8 flex-wrap">
+                <div v-if="commentaires.length > 3">
+                    <Button @click="showAll = !showAll" extra-class="flex items-center gap-3 bg-background border-secondary hover:border-[#00d3f2]/40 w-max">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#41494F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                        <template #btn-primary>Voir plus</template>
+                    </Button>
+                </div>
+                <Button extra-class="flex items-center gap-3 bg-[#00d3f2]/10 border-[#00d3f2]/40 hover:bg-[#00d3f2]/20 w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#41494F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                    <template #btn-primary>Laisser un témoignage</template>
                 </Button>
             </div>
         </div>
