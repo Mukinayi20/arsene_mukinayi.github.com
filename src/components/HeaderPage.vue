@@ -1,15 +1,18 @@
 <template>
+    <div class="primary-center hidden fixed z-1 rounded-full ml-4 opacity-50 border border-accent/75 desktop:hover:opacity-80 hover:scale-125 transition delay-150 duration-400 ease-in-out desktop:ml-70">
+        <img class="w-17 h-17 rounded-full object-cover" src="/IMG-20250901-WA0029.jpg" alt="Profil">
+    </div>
     <header class="text-Foreground pb-30">
         <div class="nav-bar fixed top-0 z-1 desktop:pl-40 desktop:pr-40 desktop:font-semibold">
             <a href="#">PORTFOLIO</a>
             <div class="hidden desktop:flex desktop:gap-8">
-                <a href="#">À propos</a>
-                <a href="#">Projets</a>
-                <a href="#">Contact</a>
+                <a href="#apropos">À propos</a>
+                <a href="#projet">Projets</a>
+                <a href="#contact">Contact</a>
             </div>
             <a  href="#">Discutons</a>
         </div>
-        <div class="primary-center mt-20 h-70">
+        <div class="primary-center mt-20 h-70" ref="bigImage">
             <img class="header-profil transition-transfordesktop:w200m duration-20 ease-out" :style="{ transform: `scale(${scale})` }" src="/IMG-20250901-WA0029.jpg" alt="Profil">
         </div>
         <div>

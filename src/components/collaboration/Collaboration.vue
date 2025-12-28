@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="contact" class="pt-20">
         <TitleCard className="flex items-center flex-col gap-5 pb-6">
             Travaillons ensemble
         </TitleCard>

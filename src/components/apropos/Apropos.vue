@@ -1,5 +1,5 @@
 <template>
-<div class="bg-bdApropos flex flex-col justify-center items-center">
+<div id="apropos" class="bg-bdApropos flex flex-col justify-center items-center">
     <div class="flex items-center flex-col gap-4 mt-20 p-8">
         <div>
             <TitleCard className="flex items-center flex-col gap-4">À propos</TitleCard>
