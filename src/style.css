@@ -4,6 +4,19 @@
 html {
   scroll-behavior: smooth;
 }
+.nav-bar__title{
+    transition: transform 500ms ease-in-out, color 400ms 150ms ease-in-out;
+}
+.nav-bar__title:hover{
+    transform: scale(1.1);
+    color: #4c9ea2;
+}
+
+.star-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
 
 @theme {
     --color-background: #F0F1F2;
