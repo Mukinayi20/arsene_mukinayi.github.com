@@ -6,7 +6,7 @@
         </div>
         <p class="text-center text-lg text-mutedForeground pt-15 desktop:w-180">Je développe des solutions numériques full stack à partir de besoins concrets. De l’analyse à la mise en production, je conçois des interfaces fluides et performantes, pensées pour simplifier les usages, automatiser les processus et faire gagner du temps, tout en créant une réelle valeur business</p>
     </div>
-        <Layoutprimary class="mt-15 desktop:w-180">
+        <Layoutprimary class="mt-15 desktop:w-200">
             <div class="flex flex-col justify-between">
                 <div class="flex justify-between items-center">
                     <h2 class="text-primary text-2xl font-medium">Résumé</h2>
@@ -24,11 +24,13 @@
                 <div>
                     <p class="text-lg text-mutedForeground pt-10">"Développeur Full Stack et architecte de solutions web, je me spécialise dans la conception d'interfaces modernes et d'architectures numériques robustes. Fort d'une expertise technique centrée sur TypeScript, Node.js et l'écosystème JavaScript (AdonisJS), je m'attache à transformer des concepts complexes en applications fluides, alliant une rigueur backend pointue à une élégance frontend soignée."</p>
 
-                    <p class="text-lg text-mutedForeground pt-10">"Passionné par la création d'expériences utilisateur intuitives, je privilégie un design minimaliste couplé à des performances optimales. Mon approche repose sur une volonté constante d'innovation : je m'efforce de concevoir des produits qui non seulement résolvent des problématiques concrètes, mais qui dépassent les attentes des utilisateurs en offrant une solution à forte valeur ajoutée."</p>
+                    <p class="text-lg text-mutedForeground pt-10 hidden tablette:block">"Passionné par la création d'expériences utilisateur intuitives, je privilégie un design minimaliste couplé à des performances optimales. Mon approche repose sur une volonté constante d'innovation : je m'efforce de concevoir des produits qui non seulement résolvent des problématiques concrètes, mais qui dépassent les attentes des utilisateurs en offrant une solution à forte valeur ajoutée."</p>
+
+                    <h3 class="text-lg pt-10 text-primary">compétences techniques</h3>
                 </div>
             </div>
             <div class="flex flex-wrap gap-2 pt-10 pb-2">
-                <Cardtech  v-for="tech in techs">{{ tech }}</Cardtech>
+                <Cardtech/>
             </div>
         </Layoutprimary>
         <div class="mt-20 mb-25 w-full tablette:flex tablette:flex-wrap tablette:justify-center">
@@ -64,13 +66,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
 import Cardtech from './Cardtech.vue';
 import Layoutprimary from '../Layoutprimary.vue';
 import ContentCard from '../ContentCard.vue';
 import TitleCard from '../TitleCard.vue';
-
-
-const techs = ref(['Adonis.js', 'Vue.js', 'TypeScrip', 'Node.js', 'JavaScript', 'UI/UX Design'])
 </script>

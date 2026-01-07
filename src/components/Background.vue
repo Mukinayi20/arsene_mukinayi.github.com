@@ -11,58 +11,88 @@ let ctx
 let animationId
 let stars = []
 
-const STAR_COUNT = 150
+// Configuration
+const CONFIG = {
+  desktopCount: 400,
+  mobileCount: 150,
+  color: '#4c9ea2',
+  mobileBreakpoint: 768
+}
 
-function resizeCanvas() {
-  canvas.value.width = window.innerWidth
-  canvas.value.height = window.innerHeight
+function getStarCount() {
+  return window.innerWidth < CONFIG.mobileBreakpoint 
+    ? CONFIG.mobileCount 
+    : CONFIG.desktopCount
 }
 
 function createStars() {
-  stars = Array.from({ length: STAR_COUNT }, () => ({
-    x: Math.random() * canvas.value.width,
-    y: Math.random() * canvas.value.height,
-    size: Math.random() * 2 + 0.5,
-    speed: Math.random() * 0.5 + 0.2
-  }))
+  const count = getStarCount()
+  stars = []
+
+  for (let i = 0; i < count; i++) {
+    const isMoving = Math.random() > 0.5 // 50% de chance d'être mobile
+    
+    stars.push({
+      x: Math.random() * canvas.value.width,
+      y: Math.random() * canvas.value.height,
+      size: Math.random() * 1.5 + 0.5,
+      // Pour le mouvement
+      isMoving: isMoving,
+      speedY: (Math.random() - 0.5) * 0.6, // Vitesse positive ou négative (monte ou descend)
+      // Pour le scintillement
+      opacity: Math.random(),
+      twinkleSpeed: Math.random() * 0.02 + 0.005,
+      phase: Math.random() * Math.PI // Pour un scintillement fluide
+    })
+  }
 }
 
 function animate() {
   ctx.clearRect(0, 0, canvas.value.width, canvas.value.height)
 
   stars.forEach(star => {
-    star.y += star.speed
+    // 1. Logique de scintillement (pour toutes les étoiles)
+    star.phase += star.twinkleSpeed
+    const currentOpacity = (Math.sin(star.phase) + 1) / 2 // Oscille entre 0 et 1
 
-    if (star.y > canvas.value.height) {
-      star.y = 0
-      star.x += (mouseX - canvas.value.width / 2) * 0.00001
+    // 2. Logique de mouvement (seulement pour les étoiles mobiles)
+    if (star.isMoving) {
+      star.y += star.speedY
+
+      // Reset si sort de l'écran (vertical)
+      if (star.y < 0) star.y = canvas.value.height
+      if (star.y > canvas.value.height) star.y = 0
     }
 
-    ctx.fillStyle = '#4c9ea2'
-    ctx.fillRect(star.x, star.y, star.size, star.size)
+    // 3. Dessin
+    ctx.beginPath()
+    ctx.fillStyle = CONFIG.color
+    ctx.globalAlpha = currentOpacity // Applique le scintillement
+    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2)
+    ctx.fill()
   })
 
   animationId = requestAnimationFrame(animate)
 }
 
+function handleResize() {
+  canvas.value.width = window.innerWidth
+  canvas.value.height = window.innerHeight
+  createStars() // Recréer les étoiles pour ajuster le nombre au nouvel écran
+}
+
 onMounted(() => {
+  if (!canvas.value) return
   ctx = canvas.value.getContext('2d')
 
-  resizeCanvas()
-  createStars()
+  handleResize()
   animate()
 
-  window.addEventListener('resize', resizeCanvas)
+  window.addEventListener('resize', handleResize)
 })
 
 onUnmounted(() => {
   cancelAnimationFrame(animationId)
-  window.removeEventListener('resize', resizeCanvas)
-})
-
-let mouseX = 0
-
-window.addEventListener('mousemove', e => {
-  mouseX = e.clientX
+  window.removeEventListener('resize', handleResize)
 })
 </script>
