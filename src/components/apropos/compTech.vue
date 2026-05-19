@@ -4,10 +4,10 @@
             <span>Esprit collaboratif</span>
         </div>
         <div class="group lg:w-full tech-carde p-2 pl-3 pr-3">
-            <span>Adaptabilité</span>
+            <span>Souci du détail</span>
         </div>
         <div class="group tech-carde p-2 pl-3 pr-3">
-            <span>Souci du détail</span>
+            <span>Adaptabilité</span>
         </div>
         <div class="group tech-carde p-2 pl-3 pr-3">
             <span>Autonomie</span>

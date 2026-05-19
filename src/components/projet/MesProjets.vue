@@ -1,15 +1,15 @@
 <template>
-    <div  id="projet" class="pt-10">
+    <div id="projet" class="pt-10">
         <div class="bg-bgMesprojet dark:bg-[#151b1f] p-8 pb-15 flex flex-col justify-center">
             <TitleCard className="flex items-center flex-col gap-5 mt-5">Projets Sélectionnés</TitleCard>
             <div class="z-1">
-                <ComposantProjet></ComposantProjet>
+                <ComposantProjet> </ComposantProjet>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import TitleCard from '../TitleCard.vue';
-import ComposantProjet from './ComposantProjet.vue';
+import TitleCard from "../TitleCard.vue";
+import ComposantProjet from "./ComposantProjet.vue";
 </script>

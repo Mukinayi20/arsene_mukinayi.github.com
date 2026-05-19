@@ -6,7 +6,7 @@
             </div>
             <p class="text-center text-lg text-mutedForeground pt-15 desktop:w-180">Développeur full stack passionné par la technologie et l’innovation, je crée des applications performantes pensées pour résoudre de vrais problèmes. J’accorde une attention particulière à l’expérience utilisateur, à l’architecture des projets et à la création de solutions capables d’avoir un impact concret.</p>
         </div>
-        <div class="w-[80%]">
+        <div class="w-[80%] max-lg:w-[97%]">
             <Layoutprimary class="mt-15 desktop:w-full transition duration-700 hover:-translate-y-1 ease-in-out hover:shadow-[0px_10px_93px_-73px_#4D9FA3]">
                 <div class="flex flex-col justify-between">
                     <div class="flex justify-between items-center">
@@ -55,7 +55,7 @@
                                     <Cardtech />
                                 </div>
                             </div>
-                            <div class="w-[40%]">
+                            <div class="w-[40%] max-sm:w-full max-lg:w-full">
                                 <div class="flex items-Center pt-5">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" fill="none" stroke="#4D9FA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1" /></svg>
                                     <h3 class="text-lg text-primary">Savoir être</h3>
