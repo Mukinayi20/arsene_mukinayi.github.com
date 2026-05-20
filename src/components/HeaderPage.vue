@@ -28,7 +28,7 @@
             </div>
         </nav>
         <div class="flex justify-center">
-            <div class="w-[70%] flex flex-col lg:flex-row items-center justify-between mt-[200px]">
+            <div class="w-[70%] flex flex-col xl:flex-row items-center justify-between mt-50">
                 <div class="primary-center" ref="bigImage">
                     <img class="h-120 object-cover border-2 border-accent/50 rounded-2xl" src="/IMG-20250901-WA0029.jpg" alt="Profil" />
                     <!-- header-profil transition-transfordesktop:w200m duration-20 ease-in-out shadow-[0px_0px_50px_-15px_#4D9FA3]" :style="{ transform: `scale(${scale})` } "effer pendant le scrole du profil" -->
