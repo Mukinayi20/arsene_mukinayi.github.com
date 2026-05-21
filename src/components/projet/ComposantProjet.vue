@@ -1,6 +1,6 @@
 <template>
-    <div v-if="projets.length > 0" class="flex flex-wrap gap-10 justify-center w-full">
-        <div v-for="projet in projets" class="w-[26%] h-108 flex">
+    <div v-if="projets.length > 0" class="flex flex-wrap max-xl:flex-col gap-10 justify-center w-full">
+        <div v-for="projet in projets" class="w-[26%] max-xl:w-full h-108">
             <CardProjet :image="projet.img" :title="projet.name" :link="projet.link" :description="projet.description" :technos="projet.technos"> </CardProjet>
         </div>
     </div>

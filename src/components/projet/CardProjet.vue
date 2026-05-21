@@ -17,7 +17,7 @@
                 <p class="text-mutedForeground">{{ description }}</p>
                 <div class="flex gap-3">
                     <div v-for="techno in technos">
-                        <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-3 bg-accent/10 p-1 rounded">
                             <small class="text-primary font-bold">
                                 {{ techno.name }}
                             </small>
