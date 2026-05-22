@@ -9,9 +9,10 @@
 <script setup>
 import portfolio from "@/assets/images/portfolio.png";
 import robbilens from "@/assets/images/robbilens.png";
-import tdr from "@/assets/images/tdr.webp";
+//import tdr from "@/assets/images/tdr.webp";
 import portfolio1 from "@/assets/images/portfolio1.png";
 import hexatrip from "@/assets/images/hexatrip.png";
+import x from "@/assets/images/x.png";
 
 import CardProjet from "./CardProjet.vue";
 import { ref } from "vue";
@@ -37,7 +38,7 @@ const projets = ref([
         name: "Robbi Lens",
         img: robbilens,
         link: "https://robbie-lens-la-photographe.onrender.com/",
-        description: "Premier projet front-end en HTML et CSS réalisé pour apprendre les bases de l’intégration et de la structuration de pages web.",
+        description: "Premier projet front-end en HTML et CSS réalisé pour apprendre les bases de l’intégration et de la structuration de pages web. << Openclassroom >>",
         technos: [
             {
                 name: "HTML",
@@ -51,7 +52,7 @@ const projets = ref([
     },
     {
         name: "Clone x",
-        img: tdr,
+        img: x,
         link: "",
         description: "Clone de Twitter développé en full stack pour pratiquer l’authentification, la gestion des publications et les interactions utilisateurs.",
         technos: [
@@ -62,6 +63,10 @@ const projets = ref([
             {
                 name: "Tailwind",
                 logo: "https://api.iconify.design/skill-icons:tailwindcss-light.svg",
+            },
+            {
+                name: "Js",
+                logo: "https://api.iconify.design/skill-icons:javascript.svg",
             },
         ],
     },
