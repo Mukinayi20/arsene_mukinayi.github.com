@@ -2,9 +2,9 @@
     <div class="group overflow-hidden bg-accent/10 rounded-lg mt-15 desktop:w-full transition duration-700 hover:-translate-y-2 ease-in-out hover:shadow-[0px_10px_93px_-73px_#4D9FA3]">
         <div class="flex flex-col gap-4 overflow-hidden">
             <div class="w-full h-40 mx-auto overflow-hidden rounded-1xl">
-                <img :src="image" :alt="alt || 'card'" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-in-out" />
+                <img :src="image" :alt="title" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-in-out" />
             </div>
-            <div class="p-3 flex flex-col justify-between h-47">
+            <div class="p-3 flex flex-col justify-between h-45 max-md:h-60 xl:h-55">
                 <div class="flex justify-between pb-3">
                     <h1 class="text-primary/75 font-bold text-[1.3rem]">{{ title }}</h1>
                     <a :href="link" target="_blank" class="w-[30%] flex flex-col justify-center items-center bg-accent/20 rounded-full transition duration-700 hover:-translate-y-1 ease-in-out">
@@ -15,9 +15,9 @@
                     </a>
                 </div>
                 <p class="text-mutedForeground">{{ description }}</p>
-                <div class="flex gap-3">
-                    <div v-for="techno in technos">
-                        <div class="flex items-center gap-3 bg-accent/10 p-1 rounded">
+                <div class="flex flex-wrap gap-2">
+                    <div v-for="techno in technos" class="">
+                        <div class="flex items-center gap-3 p-1 bg-accent/10 rounded">
                             <small class="text-primary font-bold">
                                 {{ techno.name }}
                             </small>
@@ -32,6 +32,9 @@
 
 <script setup>
 import { LucideSquareArrowOutUpRight } from "@lucide/vue";
+// const isCurrentProject = computed(() => {
+//     return link === window.location.origin;
+// });
 defineProps({
     image: String,
     title: String,
