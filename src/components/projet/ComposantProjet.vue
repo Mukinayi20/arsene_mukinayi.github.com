@@ -73,7 +73,7 @@ const projets = ref([
     {
         name: "Hexatrip",
         img: hexatrip,
-        link: "https://hexatrip-front.netlify.app/",
+        link: "https://fabled-print.netlify.app",
         description: "Application web de réservation et de gestion de voyages conçue pour offrir une expérience simple, rapide et intuitive aux utilisateurs souhaitant planifier leurs déplacements.",
         technos: [
             {
